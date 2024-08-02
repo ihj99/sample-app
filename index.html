@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download SampleApp</title>
+    <script type="text/javascript">
+        // 페이지가 로드되면 파일 다운로드를 트리거하는 함수
+        function triggerDownload() {
+            var link = document.createElement('a');
+            link.href = 'sample.apk';  // 다운로드할 파일의 경로
+            link.download = 'sample.apk';  // 다운로드될 파일의 이름
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        // 페이지가 로드될 때 위 함수 호출
+        window.onload = triggerDownload;
+    </script>
+</head>
+<body>
+    <h1>Your download will start shortly...</h1>
+    <p>If the download does not start automatically, <a href="sample.apk">click here to download</a>.</p>
+</body>
+</html>
