@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download SampleApp</title>
     <script type="text/javascript">
- function triggerDownload() {
+        // 페이지가 로드되면 파일 다운로드를 트리거하는 함수
+        function triggerDownload() {
             var link = document.createElement('a');
             link.href = 'sample.apk';  // 다운로드할 파일의 경로
             link.download = 'sample.apk';  // 다운로드될 파일의 이름
@@ -13,21 +14,8 @@
             link.click();
             document.body.removeChild(link);
         }
-
-        // 페이지가 로드될 때 호출될 함수
-        window.onload = function() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            // 안드로이드 디바이스 감지
-            if (/android/i.test(userAgent)) {
-                triggerDownload();
-            }
-
-            // iOS 디바이스 감지
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                alert("This app is not available for iOS devices.");
-            }
-        };
+        // 페이지가 로드될 때 위 함수 호출
+        window.onload = triggerDownload;
     </script>
 </head>
 <body>
