@@ -5,21 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download SampleApp</title>
     <script type="text/javascript">
-        // 페이지가 로드되면 파일 다운로드를 트리거하는 함수
-        function triggerDownload() {
+
+        document.getElementById('sample').addEventListener('click', function(){
             var link = document.createElement('a');
             link.href = 'sample.apk';  // 다운로드할 파일의 경로
             link.download = 'sample.apk';  // 다운로드될 파일의 이름
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        }
-        // 페이지가 로드될 때 위 함수 호출
-        window.onload = triggerDownload;
+        });
+
+        document.getElementById('ddd').addEventListener('click', function(){
+            var link = document.createElement('a');
+            link.href = 'ddd.apk';  // 다운로드할 파일의 경로
+            link.download = 'ddd.apk';  // 다운로드될 파일의 이름
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+
     </script>
 </head>
 <body>
     <h1>Your download will start shortly...</h1>
-    <p>If the download does not start automatically, <a href="sample.apk">click here to download</a>.</p>
+    <p>If the download does not start automatically, <a href="sample.apk" id='sample'>click here to sample download</a>.</p>
+
+    <h1>Your download will start shortly...</h1>
+    <p>If the download does not start automatically, <a href="ddd.apk" id='ddd'>click here to ddd download</a>.</p>
+
 </body>
 </html>
